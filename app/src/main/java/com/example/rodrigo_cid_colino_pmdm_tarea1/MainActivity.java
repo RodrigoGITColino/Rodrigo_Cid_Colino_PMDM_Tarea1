@@ -1,5 +1,6 @@
 package com.example.rodrigo_cid_colino_pmdm_tarea1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,10 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 if (tfUser.getText().toString().equals("admin") && tfPass.getText().toString().equals("admin")) {
 
 
+                    Intent iLogin = new Intent(MainActivity.this, ActividadLogin.class);
+                    iLogin.putExtra("nombre", tfUser.getText().toString());
+
+
+                    startActivity(iLogin);
+
+
+
+
+
                 } else {
 
                     //Make a toast here with the message "hello"
-                    Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
 
                 }
 
