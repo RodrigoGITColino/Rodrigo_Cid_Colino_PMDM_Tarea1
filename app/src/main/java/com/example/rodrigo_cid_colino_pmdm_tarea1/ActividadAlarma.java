@@ -37,8 +37,10 @@ public class ActividadAlarma extends AppCompatActivity {
 
                 Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
                         .putExtra(AlarmClock.EXTRA_MESSAGE, nombreAlarma.getText().toString())
-                        .putExtra(AlarmClock.EXTRA_HOUR, hora.getText().toString())
-                        .putExtra(AlarmClock.EXTRA_MINUTES, minutos.getText().toString());
+                        .putExtra(AlarmClock.EXTRA_HOUR,Integer.parseInt(hora.getText().toString()))
+                        .putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(minutos.getText().toString()));
+
+                startActivity(intent);
             }
         });
 
