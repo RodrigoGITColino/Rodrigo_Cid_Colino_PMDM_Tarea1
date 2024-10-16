@@ -22,14 +22,14 @@
             android:layout_width="161dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Iniciar sesión" />
+            android:text="@string/iniciar_sesion" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCredenciales"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Modificar credenciales" />
+            android:text="@string/modificar_credenciales" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="31dp"
                 android:layout_weight="1"
-                android:text="Nombre:" />
+                android:text="@string/nombre" />
 
             <EditText
                 android:id="@+id/ptNombre"
@@ -79,7 +79,7 @@
                 android:layout_width="179dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
-                android:text="Contraseña:" />
+                android:text="@string/contrase_a" />
 
             <EditText
                 android:id="@+id/ptPassword"

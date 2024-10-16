@@ -5,11 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActividadAlarma">
+    tools:context=".ActividadCredenciales">
 
     <TableLayout
-        android:layout_width="404dp"
-        android:layout_height="210dp"
+        android:layout_width="365dp"
+        android:layout_height="144dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
@@ -20,37 +20,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="197dp"
+                android:id="@+id/textView8"
+                android:layout_width="176dp"
                 android:layout_height="wrap_content"
-                android:text="@string/nombreAlarma" />
+                android:text="Nuevo nombre de usuario"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.092"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.118" />
 
             <EditText
-                android:id="@+id/tfNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="197dp"
-                android:layout_height="wrap_content"
-                android:text="@string/hora" />
-
-            <EditText
-                android:id="@+id/tfHora"
-                android:layout_width="wrap_content"
+                android:id="@+id/tfNuevoNombre"
+                android:layout_width="183dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text" />
@@ -61,14 +48,20 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="197dp"
+                android:id="@+id/textView11"
+                android:layout_width="176dp"
                 android:layout_height="wrap_content"
-                android:text="@string/minutos" />
+                android:text="Nueva contraseña"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.092"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.118" />
 
             <EditText
-                android:id="@+id/tfMinutos"
-                android:layout_width="wrap_content"
+                android:id="@+id/tfNuevaPass"
+                android:layout_width="183dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text" />
@@ -79,11 +72,12 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnCrearAlarma"
-                android:layout_width="155dp"
+                android:id="@+id/btnGuardarCambios"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/crear_alarma"
-                android:layout_span="2"/>
+                android:layout_span="2"
+                android:text="Guardar cambios" />
         </TableRow>
+
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

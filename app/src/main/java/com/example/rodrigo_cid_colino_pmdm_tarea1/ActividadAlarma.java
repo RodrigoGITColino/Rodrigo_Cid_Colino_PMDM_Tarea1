@@ -31,6 +31,8 @@ public class ActividadAlarma extends AppCompatActivity {
         EditText minutos = findViewById(R.id.tfMinutos);
         Button btnCrearAlarma = findViewById(R.id.btnCrearAlarma);
 
+
+
         btnCrearAlarma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
