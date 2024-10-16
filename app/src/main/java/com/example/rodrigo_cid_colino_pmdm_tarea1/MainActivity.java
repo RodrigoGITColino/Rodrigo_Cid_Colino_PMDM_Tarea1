@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (tfUser.getText().toString().equals("admin") && tfPass.getText().toString().equals("admin")) {
 
+                    //make intent
+
+                    Intent intent = new Intent(MainActivity.this, ActividadLogin.class);
+                    intent.putExtra("nombre", tfUser.getText().toString());
+                    startActivity(intent);
+
 
                     Intent iLogin = new Intent(MainActivity.this, ActividadLogin.class);
                     iLogin.putExtra("nombre", tfUser.getText().toString());
