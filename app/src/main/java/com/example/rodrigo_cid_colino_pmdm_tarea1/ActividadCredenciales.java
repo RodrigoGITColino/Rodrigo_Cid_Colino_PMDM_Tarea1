@@ -3,6 +3,7 @@ package com.example.rodrigo_cid_colino_pmdm_tarea1;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,15 +51,21 @@ public class ActividadCredenciales extends AppCompatActivity {
                 intent.putExtra("password", tfPass.getText().toString());
                 setResult(Activity.RESULT_OK, intent);
 
-                String filename = "credenciales.txt";
-                String fileContents = tfNombre.getText().toString() + "\n" + tfPass.getText().toString();
-                try (FileOutputStream fos = getApplicationContext().openFileOutput(filename, Context.MODE_PRIVATE)) {
-                    fos.write(fileContents.getBytes());
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+
+                SharedPreferences sharedPreferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putString("nombre",tfNombre.getText().toString());
+                editor.putString("password",tfPass.getText().toString());
+                editor.apply();
+
+//                try (FileOutputStream fos = getApplicationContext().openFileOutput(filename, Context.MODE_PRIVATE)) {
+//                    fos.write(fileContents.getBytes());
+//                } catch (FileNotFoundException e) {
+//                    throw new RuntimeException(e);
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
 
 
                 finish();

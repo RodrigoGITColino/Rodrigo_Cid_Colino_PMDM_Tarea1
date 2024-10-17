@@ -2,6 +2,7 @@ package com.example.rodrigo_cid_colino_pmdm_tarea1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,34 +44,42 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-try {
-    if (getApplicationContext().fileList().length > 2) {
-
-      //  File f = new File(getApplicationContext().getFilesDir(), "credenciales.txt");
-
-    }
-}catch (Exception e){
-    throw new RuntimeException(e);
-}
 
 
-        try {
-            FileInputStream fis = getApplicationContext().openFileInput("credenciales.txt");
-            InputStreamReader inputStreamReader = new InputStreamReader(fis, StandardCharsets.UTF_8);
-            StringBuilder stringBuilder = new StringBuilder();
-            try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
-                user = reader.readLine();
-                pass = reader.readLine();
-
-            } catch (IOException e) {
-                // Error occurred when opening raw file for reading.
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
 
 
-        String[] cosinas = getApplicationContext().fileList();
+//try {
+//    if (getApplicationContext().fileList().length > 2) {
+//
+//        File f = new File(getApplicationContext().getFilesDir(), "credenciales.txt");
+//
+//    }
+//}catch (Exception e){
+//    throw new RuntimeException(e);
+//}
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+
+        user = sharedPreferences.getString("nombre", "admin");
+        pass = sharedPreferences.getString("password", "admin");
+
+
+//        try {
+//            FileInputStream fis = getApplicationContext().openFileInput("credenciales.txt");
+//            InputStreamReader inputStreamReader = new InputStreamReader(fis, StandardCharsets.UTF_8);
+//            StringBuilder stringBuilder = new StringBuilder();
+//            try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+//                user = reader.readLine();
+//                pass = reader.readLine();
+//
+//            } catch (IOException e) {
+//                // Error occurred when opening raw file for reading.
+//            }
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+
 
         Button bLogin = findViewById(R.id.btIniciar);
         EditText tfUser = findViewById(R.id.ptNombre);
